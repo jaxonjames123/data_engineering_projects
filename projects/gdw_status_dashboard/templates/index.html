@@ -1,0 +1,37 @@
+{% extends base %}
+{% block preamble %}
+<div>
+    <TD>
+    <Th>
+        <h1>GDW Status Dashboard</h1>
+    </Th>
+    </TD>
+</div>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Custom Style -->
+<link rel="stylesheet" href="/gdw_status/static/css/custom.min.css">
+
+{% endblock %}
+
+{% block contents %}
+
+<body>
+    <div class="table">
+        <table style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom: 50px;background: #f1f1f1;">
+            <TR>
+                <TD style="padding-right: 50px;background-color: black;">{{ embed(roots.GDWStatus1) }} </TD>
+                <TD>{{ embed(roots.GDWStatus2) }}</TD>
+            </TR>
+        </table>
+    </div>
+    <div class="table">
+        <h3></h3>
+        <table style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom: 50px;background: #f1f1f1;">
+            <TR style="background-color: e3e0cc">
+                <TD>{{ embed(roots.GDWTbl) }} </TD>
+            </TR>
+        </table>
+    </div>
+</body>
+{% endblock %}

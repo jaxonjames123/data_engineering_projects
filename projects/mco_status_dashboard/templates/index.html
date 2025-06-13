@@ -1,0 +1,67 @@
+{% extends base %}
+{% block preamble %}
+<div>
+    <Td>
+    <Th>
+        <h1>MCO Status Dashboard</h1>
+    </Th>
+    </Td>
+</div>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Custom Style -->
+<link rel="stylesheet" href="mco_status/static/css/custom.min.css">
+
+{% endblock %}
+
+{% block contents %}
+
+<body>
+    <div class="container body">
+        <table style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom: 50px;">
+            <TR>
+                <Td>{{ embed(roots.MCOStatus) }}</TD>
+            </TR>
+        </table>
+        <div id="redshift-tables">
+            <Td>
+                <h2>Redshift Inventory</h2>
+            </Td>
+            <div class="table">
+                <h4>Roster</h4>
+                <table style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom:50px;background: #f1f1f1;">
+                    <TR style="background-color: e3e0cc;">
+                        <TD>{{ embed(roots.Roster) }}</TD>
+                    </TR>
+                </table>
+            </div>
+            <div class="table">
+                <h4>Claims</h4>
+                <table style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom: 50px;background: #f1f1f1;">
+                    <TR style="background-color: e3e0cc">
+                        <TD>{{ embed(roots.Claims) }}</TD>
+                    </TR>
+                </table>
+            </div>
+            <div class="table">
+                <h4>Pharmacy</h4>
+                <table
+                    style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom: 50px;background: #f1f1f1;">
+                    <TR style="background-color: e3e0cc">
+                        <TD>{{ embed(roots.Pharmacy) }}</TD>
+                    </TR>
+                </table>
+            </div>
+            <div class="table">
+                <h4>Gaps In Care</h4>
+                <table
+                    style="margin-left: auto;margin-right: auto;padding-top: 50px;padding-bottom: 50px;background: #f1f1f1;">
+                    <TR style="background-color: e3e0cc">
+                        <TD>{{ embed(roots.GIC) }}</TD>
+                    </TR>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
